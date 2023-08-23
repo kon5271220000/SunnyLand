@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerIdleState : PlayerGroundState
+public class PlayerJumpState : PlayerStates
 {
-    public PlayerIdleState(Player player, PlayerStateMachine stateMachine, string animName) : base(player, stateMachine, animName)
+    public PlayerJumpState(Player player, PlayerStateMachine stateMachine, string animName) : base(player, stateMachine, animName)
     {
+
     }
 
     public override void Enter()
     {
         base.Enter();
+
+        player.Jump();
     }
 
     public override void Exit()
@@ -22,11 +25,9 @@ public class PlayerIdleState : PlayerGroundState
     {
         base.Update();
 
-        if(Mathf.Abs(xInput)>0) 
+        if (!player.IsGround())
         {
-            stateMachine.ChangeState(player.moveState);
+            stateMachine.ChangeState(player.airState);
         }
-
-        
     }
 }

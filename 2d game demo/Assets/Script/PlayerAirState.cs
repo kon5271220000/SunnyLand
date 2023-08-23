@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMoveState : PlayerGroundState
+public class PlayerAirState : PlayerStates
 {
-    public PlayerMoveState(Player player, PlayerStateMachine stateMachine, string animName) : base(player, stateMachine, animName)
+    public PlayerAirState(Player player, PlayerStateMachine stateMachine, string animName) : base(player, stateMachine, animName)
     {
+
     }
 
     public override void Enter()
@@ -24,8 +25,10 @@ public class PlayerMoveState : PlayerGroundState
 
         player.Move(xInput);
         player.Flip(xInput);
+        player.Flip(xInput);
+        player.anim.SetFloat("yVelocity", player.rb.velocity.y);
 
-        if(xInput == 0)
+        if (player.IsGround())
         {
             stateMachine.ChangeState(player.idleState);
         }

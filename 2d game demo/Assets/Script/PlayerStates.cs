@@ -10,6 +10,9 @@ public class PlayerStates
     protected PlayerStateMachine stateMachine;
 
     private string animName;
+
+    protected float xInput;
+    protected float yInput;
     
 
     public PlayerStates(Player player, PlayerStateMachine stateMachine, string animName)
@@ -26,7 +29,8 @@ public class PlayerStates
 
     public virtual void Update()
     {
-       
+        xInput = Input.GetAxisRaw("Horizontal");
+        yInput = Input.GetAxisRaw("Vertical");
         
     }
     
@@ -35,5 +39,5 @@ public class PlayerStates
         player.anim.SetBool(animName, false);
     }
 
-
+    
 }
