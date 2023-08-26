@@ -25,6 +25,7 @@ public class PlayerCrouchState : PlayerGroundState
         base.Update();
 
         player.MoveWhileCrouch(xInput);
+        player.Flip(xInput);
 
         if(yInput >= 0) 
         {

@@ -57,10 +57,6 @@ public class Player : MonoBehaviour
     { 
         StateMachine.currentState.Update();
 
-        if (IsGround())
-        {
-            Debug.Log("is on ground");
-        }
     }
 
     public void Move(float xInput)
