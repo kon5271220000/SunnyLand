@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 20496524}
   - component: {fileID: 20496519}
   - component: {fileID: 20496523}
+  - component: {fileID: 20496526}
   m_Layer: 10
   m_Name: Eagle
   m_TagString: Untagged
@@ -305,11 +306,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20496518}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -324,6 +325,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &20496526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20496518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3054693ed0c8c4c8588576c5a7df93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1686009153}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,6 +1242,7 @@ GameObject:
   - component: {fileID: 1686009148}
   - component: {fileID: 1686009147}
   - component: {fileID: 1686009152}
+  - component: {fileID: 1686009153}
   m_Layer: 11
   m_Name: player
   m_TagString: Player
@@ -1419,7 +1434,21 @@ MonoBehaviour:
   groundCheckDistance: 0.3
   rb: {fileID: 1686009147}
   anim: {fileID: 1686009149}
-  box: {fileID: 0}
+  box: {fileID: 1686009148}
+--- !u!114 &1686009153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686009146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ad8128ff2f0704fb66c963b53bc773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 3
 --- !u!1 &2027214307
 GameObject:
   m_ObjectHideFlags: 0
